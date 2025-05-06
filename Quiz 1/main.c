@@ -9,19 +9,19 @@
 
 void sortAscending(int arr[], int n, int *comparisons, int *swaps) {
 
-    int i, value, min;
+    int i, j, min;
 
     for (i = 0; i < n-1; i++) {
 
         min = i;
 
-        for (value = i+1; value < n; value++) {
+        for (j = i+1; j < n; j++) {
 
             (*comparisons)++;
 
-            if (arr[value] < arr[min]) {
+            if (arr[j] < arr[min]) {
 
-                min = value;
+                min = j;
 
             }
 
@@ -50,9 +50,9 @@ void sortAscending(int arr[], int n, int *comparisons, int *swaps) {
  * 
  */
 
-void printResult(int arr[], int size) {
+void printResult(int arr[], int n) {
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < n; i++) {
 
         printf("%d ", arr[i]);
 
@@ -97,8 +97,8 @@ int main() {
     printf("Sorted: ");
     printResult(arr, n);
 
-    printf("Total comparisons: %d\n", comparisons);
-    printf("Total swaps: %d\n", swaps);
+    printf("Total Perbandingan: %d\n", comparisons);
+    printf("Total Pertukaran: %d\n", swaps);
 
     printf("\n");
 
